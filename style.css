@@ -1,0 +1,355 @@
+:root {
+  --primary: #3730a3;
+  --primary-dark: #2b2380;
+  --accent-green: #16a34a;
+  --accent-red: #dc2626;
+  --bg-light: #eef2ff;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 32px;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: -8px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 14px 24px;
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 12px 22px;
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+.btn-small {
+  padding: 10px 18px;
+  font-size: 14px;
+}
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, var(--bg-light) 0%, white 100%);
+  padding: 80px 0 60px;
+  text-align: center;
+}
+.hero-subtitle {
+  max-width: 620px;
+  margin: 0 auto 32px;
+  font-size: 18px;
+  color: var(--text-muted);
+}
+.hero-note {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Calculator */
+.calculator-section {
+  padding: 72px 0;
+  background: white;
+}
+.calculator-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: var(--bg-light);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.calculator-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.calculator-inputs label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.calculator-inputs input[type="number"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 16px;
+  font-weight: 400;
+}
+.calculator-inputs input[type="range"] {
+  width: 100%;
+}
+#calcRateValue {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.calculator-result {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.result-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 8px 0 0;
+}
+.result-amount {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--accent-red);
+  margin: 4px 0;
+}
+.result-amount-secondary {
+  font-size: 24px;
+  color: var(--text-dark);
+}
+.result-comparison {
+  margin: 20px 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.result-highlight {
+  color: var(--accent-green);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* How it works */
+.how-it-works {
+  padding: 72px 0;
+  background: var(--bg-light);
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.step-card {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  text-align: center;
+}
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin: 0 auto 16px;
+}
+.step-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Pricing */
+.pricing {
+  padding: 72px 0;
+  background: white;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pricing-card {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+}
+.pricing-card-popular {
+  border: 2px solid var(--primary);
+}
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.price {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 8px 0;
+}
+.price span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.pricing-desc {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Final CTA */
+.final-cta {
+  padding: 72px 0;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+}
+.final-cta h2 {
+  color: white;
+  margin-bottom: 32px;
+}
+.final-cta .btn-primary {
+  background: white;
+  color: var(--primary);
+}
+.final-cta .btn-primary:hover {
+  background: var(--bg-light);
+}
+
+/* Footer */
+.site-footer {
+  padding: 24px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* Signup */
+.signup-section {
+  padding: 72px 0;
+  background: var(--bg-light);
+}
+.signup-card {
+  max-width: 440px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.signup-card label {
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.signup-card input,
+.signup-card select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 16px;
+  font-weight: 400;
+}
+.form-error {
+  color: var(--accent-red);
+  font-size: 14px;
+  margin: -8px 0 0;
+}
+.hidden {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  h1 { font-size: 30px; }
+  .calculator-card {
+    grid-template-columns: 1fr;
+  }
+  .steps-grid, .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}

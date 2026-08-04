@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>carecall. — Reduce programările ratate, automat</title>
+<meta name="description" content="carecall. trimite remindere automate pacienților și reduce neprezentările la programare din clinica ta. Vezi în 30 de secunde cât pierzi din programări ratate." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">carecall.</div>
+      <a class="btn btn-primary btn-small" href="#signup">Creează cont gratuit</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Reduce programările ratate.<br />Automat.</h1>
+      <p class="hero-subtitle">
+        carecall. trimite remindere automate pacienților tăi pe WhatsApp, SMS și email,
+        ca să vină la programări și clinica ta să nu mai piardă bani pe scaune goale.
+      </p>
+      <a class="btn btn-primary btn-large" href="https://carecall-onboarding.onrender.com/">Creează cont gratuit — 14 zile</a>
+      <p class="hero-note">Fără card bancar. Configurare în mai puțin de 5 minute.</p>
+    </div>
+  </section>
+
+  <section class="calculator-section" id="calculator">
+    <div class="container">
+      <h2>Cât pierzi lunar din programări ratate?</h2>
+      <p class="section-subtitle">Introdu câteva cifre despre clinica ta și află imediat.</p>
+
+      <div class="calculator-card">
+        <div class="calculator-inputs">
+          <label>
+            Câte programări ai, în medie, pe lună?
+            <input type="number" id="calcAppointments" value="200" min="0" />
+          </label>
+          <label>
+            Care e prețul mediu al unei consultații (lei)?
+            <input type="number" id="calcPrice" value="150" min="0" />
+          </label>
+          <label>
+            Ce procent estimezi că nu se prezintă la programare (neprezentare)?
+            <input type="range" id="calcRate" min="0" max="50" value="15" />
+            <span id="calcRateValue">15%</span>
+          </label>
+        </div>
+
+        <div class="calculator-result">
+          <p class="result-label">Pierdere estimată pe lună</p>
+          <p class="result-amount" id="calcMonthlyLoss">4.500 lei</p>
+          <p class="result-label">Pierdere estimată pe an</p>
+          <p class="result-amount result-amount-secondary" id="calcYearlyLoss">54.000 lei</p>
+
+          <div class="result-comparison">
+            <p>Cel mai popular plan carecall costă <strong>299 lei/lună</strong>.</p>
+            <p id="calcSavingsMessage" class="result-highlight"></p>
+          </div>
+
+          <a class="btn btn-primary btn-large" href="#signup">Oprește pierderea — Creează cont gratuit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="container">
+      <h2>Cum funcționează</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Importă pacienții</h3>
+          <p>Încarci lista de pacienți dintr-un fișier Excel sau CSV, în câteva secunde.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Trimitem remindere automate</h3>
+          <p>carecall. trimite automat mesaje pacienților, la momentul potrivit, pe canalul potrivit.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Vezi rezultatele</h3>
+          <p>Urmărești în dashboard câte programări ai salvat și câți bani ai economisit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2>Prețuri simple, fără costuri ascunse</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Esențial</h3>
+          <p class="price">149 lei<span>/lună</span></p>
+          <p class="pricing-desc">Pentru cabinete mici, la început de drum.</p>
+          <a class="btn btn-secondary" href="https://carecall-onboarding.onrender.com/">Începe gratuit</a>
+        </div>
+        <div class="pricing-card pricing-card-popular">
+          <p class="popular-badge">Cel mai popular</p>
+          <h3>Plus</h3>
+          <p class="price">299 lei<span>/lună</span></p>
+          <p class="pricing-desc">Pentru clinici cu volum mediu de programări.</p>
+          <a class="btn btn-primary" href="https://carecall-onboarding.onrender.com/">Începe gratuit</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Premium</h3>
+          <p class="price">449 lei<span>/lună</span></p>
+          <p class="pricing-desc">Pentru clinici mari, cu nevoi avansate.</p>
+          <a class="btn btn-secondary" href="https://carecall-onboarding.onrender.com/">Începe gratuit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2>Nu mai lăsa programările ratate să-ți mănânce profitul.</h2>
+      <a class="btn btn-primary btn-large" href="#signup">Creează cont gratuit</a>
+    </div>
+  </section>
+
+  <section class="signup-section" id="signup">
+    <div class="container">
+      <h2>Creează-ți contul gratuit</h2>
+      <p class="section-subtitle">Pilot gratuit de 30 de zile. Fără card necesar.</p>
+
+      <form id="signupForm" class="signup-card">
+        <label>
+          Numele clinicii
+          <input type="text" id="clinicName" required />
+        </label>
+        <label>
+          Emailul tău
+          <input type="email" id="ownerEmail" required />
+        </label>
+        <label>
+          Alege un plan (informativ, nu plătești nimic acum)
+          <select id="signupPlan">
+            <option value="starter">Esențial — 149 lei/lună</option>
+            <option value="growth" selected>Plus — 299 lei/lună</option>
+            <option value="pro">Premium — 449 lei/lună</option>
+          </select>
+        </label>
+        <label>
+          Parolă
+          <input type="password" id="signupPassword" required />
+        </label>
+        <ul id="passwordChecklist" style="list-style:none; padding:0; margin:0 0 16px; font-size:13px;">
+          <li id="pwCheckLength" style="color:#dc2626;">✗ Minim 8 caractere</li>
+          <li id="pwCheckUppercase" style="color:#dc2626;">✗ O literă mare (A-Z)</li>
+          <li id="pwCheckSpecial" style="color:#dc2626;">✗ Un simbol special (ex. ! @ # $ %)</li>
+        </ul>
+
+        <p id="signupError" class="form-error hidden"></p>
+
+        <button type="submit" id="signupSubmit" class="btn btn-primary btn-large">Creează-ți contul gratuit</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 carecall. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
