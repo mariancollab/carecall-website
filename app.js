@@ -32,24 +32,29 @@ function recalculate() {
 // ---------- Signup ----------
 
 function updatePasswordChecklist(password) {
-  const lengthOk = password.length >= 8;
+  const lengthOk = password.length >= 12;
   const uppercaseOk = /[A-Z]/.test(password);
+  const digitOk = /[0-9]/.test(password);
   const specialOk = /[^A-Za-z0-9]/.test(password);
 
   const lengthEl = document.getElementById("pwCheckLength");
   const uppercaseEl = document.getElementById("pwCheckUppercase");
+  const digitEl = document.getElementById("pwCheckDigit");
   const specialEl = document.getElementById("pwCheckSpecial");
 
-  lengthEl.textContent = (lengthOk ? "✓" : "✗") + " Minim 8 caractere";
+  lengthEl.textContent = (lengthOk ? "✓" : "✗") + " Minim 12 caractere";
   lengthEl.style.color = lengthOk ? "#16a34a" : "#dc2626";
 
   uppercaseEl.textContent = (uppercaseOk ? "✓" : "✗") + " O literă mare (A-Z)";
   uppercaseEl.style.color = uppercaseOk ? "#16a34a" : "#dc2626";
 
+  digitEl.textContent = (digitOk ? "✓" : "✗") + " O cifră (0-9)";
+  digitEl.style.color = digitOk ? "#16a34a" : "#dc2626";
+
   specialEl.textContent = (specialOk ? "✓" : "✗") + " Un simbol special (ex. ! @ # $ %)";
   specialEl.style.color = specialOk ? "#16a34a" : "#dc2626";
 
-  return lengthOk && uppercaseOk && specialOk;
+  return lengthOk && uppercaseOk && digitOk && specialOk;
 }
 
 function show(el) {
