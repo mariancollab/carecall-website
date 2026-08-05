@@ -17,65 +17,74 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: var(--text-dark);
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 17px;
 }
 
 .container {
-  max-width: 1080px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 h1, h2, h3 {
   line-height: 1.2;
-  margin: 0 0 16px;
+  margin: 0 0 20px;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: 42px;
+  font-size: 58px;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 40px;
   text-align: center;
 }
 
 .section-subtitle {
   text-align: center;
   color: var(--text-muted);
-  margin-top: -8px;
-  margin-bottom: 40px;
+  font-size: 18px;
+  margin-top: -12px;
+  margin-bottom: 48px;
 }
 
 .btn {
   display: inline-block;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
   border: none;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .btn-primary {
   background: var(--primary);
   color: white;
-  padding: 14px 24px;
+  padding: 15px 26px;
+  box-shadow: 0 4px 14px rgba(55, 48, 163, 0.25);
 }
 .btn-primary:hover {
   background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(55, 48, 163, 0.32);
 }
 
 .btn-secondary {
   background: white;
   color: var(--primary);
   border: 2px solid var(--primary);
-  padding: 12px 22px;
+  padding: 13px 24px;
+}
+.btn-secondary:hover {
+  background: var(--bg-light);
 }
 
 .btn-large {
-  padding: 16px 32px;
-  font-size: 18px;
+  padding: 18px 36px;
+  font-size: 19px;
 }
 
 .btn-small {
@@ -86,7 +95,12 @@ h2 {
 /* Header */
 .site-header {
   border-bottom: 1px solid var(--border-color);
-  padding: 16px 0;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  z-index: 100;
 }
 .header-inner {
   display: flex;
@@ -94,7 +108,7 @@ h2 {
   align-items: center;
 }
 .logo {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 800;
   color: var(--primary);
 }
@@ -102,35 +116,36 @@ h2 {
 /* Hero */
 .hero {
   background: linear-gradient(180deg, var(--bg-light) 0%, white 100%);
-  padding: 80px 0 60px;
+  padding: 120px 0 90px;
   text-align: center;
 }
 .hero-subtitle {
-  max-width: 620px;
-  margin: 0 auto 32px;
-  font-size: 18px;
+  max-width: 680px;
+  margin: 0 auto 36px;
+  font-size: 20px;
   color: var(--text-muted);
 }
 .hero-note {
-  margin-top: 16px;
-  font-size: 14px;
+  margin-top: 18px;
+  font-size: 15px;
   color: var(--text-muted);
 }
 
 /* Calculator */
 .calculator-section {
-  padding: 72px 0;
+  padding: 100px 0;
   background: white;
 }
 .calculator-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 48px;
   background: var(--bg-light);
-  border-radius: 16px;
-  padding: 40px;
-  max-width: 900px;
+  border-radius: 20px;
+  padding: 48px;
+  max-width: 960px;
   margin: 0 auto;
+  box-shadow: 0 10px 40px rgba(55, 48, 163, 0.08);
 }
 .calculator-inputs {
   display: flex;
@@ -198,19 +213,20 @@ h2 {
 
 /* How it works */
 .how-it-works {
-  padding: 72px 0;
+  padding: 100px 0;
   background: var(--bg-light);
 }
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 .step-card {
   background: white;
-  padding: 28px;
-  border-radius: 12px;
+  padding: 36px 32px;
+  border-radius: 16px;
   text-align: center;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
 }
 .step-number {
   width: 36px;
@@ -231,23 +247,26 @@ h2 {
 
 /* Pricing */
 .pricing {
-  padding: 72px 0;
+  padding: 100px 0;
   background: white;
 }
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 .pricing-card {
   border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 32px 24px;
+  border-radius: 16px;
+  padding: 40px 32px;
   text-align: center;
   position: relative;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
 }
 .pricing-card-popular {
   border: 2px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(55, 48, 163, 0.15);
+  transform: scale(1.03);
 }
 .popular-badge {
   position: absolute;
@@ -279,7 +298,7 @@ h2 {
 
 /* Final CTA */
 .final-cta {
-  padding: 72px 0;
+  padding: 100px 0;
   background: var(--primary);
   color: white;
   text-align: center;
@@ -304,20 +323,56 @@ h2 {
   font-size: 13px;
 }
 
-/* Signup */
-.signup-section {
-  padding: 72px 0;
-  background: var(--bg-light);
+/* Signup modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 24px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.modal-overlay.hidden {
+  display: none;
+}
+.modal-content {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+}
+.modal-content > div {
+  text-align: center;
+}
+.modal-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid var(--border-color);
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  z-index: 1;
 }
 .signup-card {
-  max-width: 440px;
+  max-width: 480px;
   margin: 0 auto;
   background: white;
-  border-radius: 16px;
-  padding: 32px;
+  border-radius: 20px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
 }
 .signup-card label {
   font-weight: 600;
