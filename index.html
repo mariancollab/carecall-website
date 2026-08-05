@@ -20,17 +20,17 @@
     <div class="container hero-inner">
       <h1>Reduce programările ratate.<br />Automat.</h1>
       <p class="hero-subtitle">
-        carecall. trimite notificări automate pacienților tăi pe WhatsApp, SMS și email,
-        pentru a asigura prezența pacienților la programări.
+        carecall. trimite remindere automate pacienților tăi pe WhatsApp, SMS și email,
+        ca să vină la programări și clinica ta să nu mai piardă bani pe scaune goale.
       </p>
       <a class="btn btn-primary btn-large" href="#signup">Creează cont gratuit — pilot 30 de zile</a>
-      <p class="hero-note">Nu necesită card bancar. Implementare rapidă.</p>
+      <p class="hero-note">Fără card bancar. Configurare în mai puțin de 5 minute.</p>
     </div>
   </section>
 
   <section class="calculator-section" id="calculator">
     <div class="container">
-      <h2>Cât pierzi lunar din programări ratate?</h2>
+      <h2>Cât pierzi lunar din neprezentări la programare?</h2>
       <p class="section-subtitle">Introdu câteva cifre despre clinica ta și află imediat.</p>
 
       <div class="calculator-card">
@@ -44,7 +44,7 @@
             <input type="number" id="calcPrice" value="150" min="0" />
           </label>
           <label>
-            Ce procent estimezi că nu se prezintă la programare?
+            Ce procent estimezi că nu se prezintă la programare (neprezentare)?
             <input type="range" id="calcRate" min="0" max="50" value="15" />
             <span id="calcRateValue">15%</span>
           </label>
@@ -78,13 +78,13 @@
         </div>
         <div class="step-card">
           <div class="step-number">2</div>
-          <h3>Trimitem notificări automate</h3>
+          <h3>Trimitem remindere automate</h3>
           <p>carecall. trimite automat mesaje pacienților, la momentul potrivit, pe canalul potrivit.</p>
         </div>
         <div class="step-card">
           <div class="step-number">3</div>
           <h3>Vezi rezultatele</h3>
-          <p>Urmărești în lista personală câte programări ai salvat și câți bani ai economisit.</p>
+          <p>Urmărești în dashboard câte programări ai salvat și câți bani ai economisit.</p>
         </div>
       </div>
     </div>
@@ -92,7 +92,7 @@
 
   <section class="pricing" id="pricing">
     <div class="container">
-      <h2>Abonamente simple. Zero surprize.</h2>
+      <h2>Prețuri simple, fără costuri ascunse</h2>
       <div class="pricing-grid">
         <div class="pricing-card">
           <h3>Esențial</h3>
@@ -119,15 +119,21 @@
 
   <section class="final-cta">
     <div class="container">
-      <h2>Programări confirmate, profituri garantate.</h2>
+      <h2>Nu mai lăsa programările ratate să-ți mănânce profitul.</h2>
       <a class="btn btn-primary btn-large" href="#signup">Creează cont gratuit</a>
     </div>
   </section>
 
   <section class="signup-section" id="signup">
     <div class="container">
-      <h2>Creează-ți contul gratuit</h2>
-      <p class="section-subtitle">Pilot gratuit de 30 de zile. Fără card necesar.</p>
+      <div id="signupIntro">
+        <h2>Creează-ți contul gratuit</h2>
+        <p class="section-subtitle">Pilot gratuit de 30 de zile. Fără card necesar.</p>
+      </div>
+      <div id="loginIntro" class="hidden">
+        <h2>Bine ai revenit</h2>
+        <p class="section-subtitle">Conectează-te la contul tău carecall.</p>
+      </div>
 
       <form id="signupForm" class="signup-card">
         <label>
@@ -160,13 +166,74 @@
         <p id="signupError" class="form-error hidden"></p>
 
         <button type="submit" id="signupSubmit" class="btn btn-primary btn-large">Creează-ți contul gratuit</button>
+
+        <p class="trust-line" id="toggleToLoginLine" style="margin-top:16px; text-align:center;">
+          Ai deja cont? <a href="#" id="showLoginLink">Conectează-te</a>
+        </p>
       </form>
+
+      <div id="loginBox" class="signup-card hidden">
+        <label>
+          Adresa ta de email
+          <input type="email" id="loginEmail" placeholder="tu@clinicata.ro" />
+        </label>
+        <label>
+          Parolă
+          <input type="password" id="loginPassword" placeholder="Parola ta" />
+        </label>
+        <button type="button" class="btn btn-primary btn-large" id="loginSubmitBtn" style="width:100%;">Continuă</button>
+        <p id="loginError" class="form-error hidden"></p>
+        <p style="margin-top:8px; text-align:right;">
+          <a href="#" id="showForgotPasswordLink" style="font-size:13px;">Ți-ai uitat parola?</a>
+        </p>
+
+        <div id="forgotPasswordBox" class="hidden" style="margin-top:12px; padding-top:12px; border-top:1px solid var(--border-color);">
+          <label>
+            Emailul contului tău
+            <input type="email" id="forgotEmail" placeholder="tu@clinicata.ro" />
+          </label>
+          <button type="button" class="btn btn-secondary" id="sendResetCodeBtn" style="width:100%; margin-top:8px;">Trimite cod de resetare</button>
+          <p id="forgotError" class="form-error hidden"></p>
+          <p id="forgotSuccess" style="color:#16a34a; font-size:14px; margin:8px 0 0;" class="hidden"></p>
+
+          <div id="resetPasswordFields" class="hidden" style="margin-top:12px;">
+            <label>
+              Codul primit pe email
+              <input type="text" id="resetCode" inputmode="numeric" maxlength="6" placeholder="123456" />
+            </label>
+            <label>
+              Parolă nouă
+              <input type="password" id="resetNewPassword" placeholder="Minim 12 caractere" />
+            </label>
+            <ul id="resetPasswordChecklist" style="list-style:none; padding:0; margin:8px 0 16px; font-size:13px;">
+              <li id="resetPwCheckLength" style="color:#dc2626;">✗ Minim 12 caractere</li>
+              <li id="resetPwCheckUppercase" style="color:#dc2626;">✗ O literă mare (A-Z)</li>
+              <li id="resetPwCheckDigit" style="color:#dc2626;">✗ O cifră (0-9)</li>
+              <li id="resetPwCheckSpecial" style="color:#dc2626;">✗ Un simbol special (ex. ! @ # $ %)</li>
+            </ul>
+            <button type="button" class="btn btn-primary" id="confirmResetBtn" style="width:100%;">Schimbă parola</button>
+          </div>
+        </div>
+
+        <div id="mfaBox" class="hidden" style="margin-top:12px;">
+          <label>
+            Codul primit pe email
+            <input type="text" id="mfaCode" inputmode="numeric" maxlength="6" placeholder="123456" />
+          </label>
+          <button type="button" class="btn btn-primary" id="mfaSubmitBtn" style="width:100%; margin-top:8px;">Confirmă codul</button>
+          <p id="mfaError" class="form-error hidden"></p>
+        </div>
+
+        <p class="trust-line" id="toggleToSignupLine" style="margin-top:12px; text-align:center;">
+          Nu ai cont? <a href="#" id="showSignupLink">Creează-ți unul</a>
+        </p>
+      </div>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy;© 2026 CareCall. Toate drepturile rezervate.</p>
+      <p>&copy; 2026 carecall. Toate drepturile rezervate.</p>
     </div>
   </footer>
 
