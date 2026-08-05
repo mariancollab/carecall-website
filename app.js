@@ -133,12 +133,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("signupForm").addEventListener("submit", handleSignup);
 
-  // Butoanele din secțiunea de prețuri preselectează planul ales, apoi
-  // derulează pagina spre formularul de signup.
-  document.querySelectorAll("a[data-plan]").forEach((link) => {
-    link.addEventListener("click", () => {
-      document.getElementById("signupPlan").value = link.dataset.plan;
+  // ---------- Modal de signup/login ----------
+  const signupModal = document.getElementById("signupModal");
+
+  function openSignupModal() {
+    signupModal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeSignupModal() {
+    signupModal.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+
+  // Orice buton "Creează cont gratuit" din pagină deschide modalul, în loc
+  // să derulez pagina spre o secțiune fixă. Cele din prețuri preselectează
+  // și planul ales.
+  document.querySelectorAll('a[href="#signup"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (link.dataset.plan) {
+        document.getElementById("signupPlan").value = link.dataset.plan;
+      }
+      openSignupModal();
     });
+  });
+
+  document.getElementById("closeSignupModal").addEventListener("click", closeSignupModal);
+
+  // Închide și dacă apeși în afara casetei albe (pe fundalul întunecat).
+  signupModal.addEventListener("click", (e) => {
+    if (e.target === signupModal) {
+      closeSignupModal();
+    }
   });
 
   // ---------- Toggle semnare cont / conectare ----------
