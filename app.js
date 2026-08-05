@@ -146,15 +146,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   }
 
-  // Orice buton "Creează cont gratuit" din pagină deschide modalul, în loc
-  // să derulez pagina spre o secțiune fixă. Cele din prețuri preselectează
-  // și planul ales.
+  // Orice buton "Creează cont gratuit" din pagină (inclusiv cele din
+  // secțiunea de prețuri, care sunt doar informative) deschide modalul.
   document.querySelectorAll('a[href="#signup"]').forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      if (link.dataset.plan) {
-        document.getElementById("signupPlan").value = link.dataset.plan;
-      }
       openSignupModal();
     });
   });
